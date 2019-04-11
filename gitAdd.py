@@ -15,8 +15,9 @@ class githubAdd:
                 r = requests.put(url=URL)
                 print (r.json())
 
+        return users, teams
+        
 if __name__ == "__main__":
-    #breakpoint()
     githubAdd()
 
 
