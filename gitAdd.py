@@ -11,7 +11,8 @@ class githubAdd:
             users = csv.reader(csvfile, delimiter=',')
             for row in users:
                 print (row)
-                call('curl -u "username":"password" https://api.github.com/orgs/YOURORGNAMEHERE/memberships/'+row[0], shell=True)
+                
+            call('curl -X PUT -u "username":"password" https://api.github.com/orgs/orgName/memberships/'+row[0], shell=True)
 
         return users
         
