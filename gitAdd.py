@@ -1,4 +1,5 @@
 import csv
+import pandas as pd
 
 class githubAdd:
 
@@ -6,14 +7,13 @@ class githubAdd:
         self.readGithubUsersCSV('githubUserList.csv');
 
     def readGithubUsersCSV(self, inputFile):
-        with open(inputFile) as csvfile:
-            users = csv.reader(csvfile, delimiter=',')
-            for row in users:
-                breakpoint()
-                print(', '.join(row))
-
+        csvFile = pd.read_csv(inputFile)
+        users = csvFile['User']
+        teams = csvFile['Team']
+        for u in range(len(users)):
+            print('User:', users[u], ' -----------  Team: ', teams[u])
+        
 if __name__ == "__main__":
-    #breakpoint()
     githubAdd()
 
 
