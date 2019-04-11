@@ -11,11 +11,11 @@ class githubAdd:
             users = csv.reader(csvfile, delimiter=',')
             for row in users:
                 #breakpoint()
-                URL = "https://api.github.com/orgs/YOURORGNAMEHERE/memberships/" + row[0]
+                URL = "https://api.github.com/?access_token=[OAUTH-TOKEN]/orgs/[YOURORGNAMEHERE]/memberships/" + row[0]
                 r = requests.put(url=URL)
                 print (r.json())
 
-        return users, teams
+        return users
         
 if __name__ == "__main__":
     githubAdd()
