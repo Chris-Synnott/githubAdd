@@ -12,7 +12,7 @@ class githubAdd:
             for row in users:
                 print (row)
                 
-            call('curl -X PUT -u "username":"password" https://api.github.com/orgs/orgName/memberships/'+row[0], shell=True)
+            call('curl -X PUT -u "username":"password" https://api.github.com/orgs/fmavborg/memberships/'+row[0], shell=True)
 
         return users
         
