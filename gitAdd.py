@@ -1,5 +1,5 @@
 import csv
-import requests
+from subprocess import call
 
 class githubAdd:
 
@@ -10,15 +10,11 @@ class githubAdd:
         with open(inputFile) as csvfile:
             users = csv.reader(csvfile, delimiter=',')
             for row in users:
-                #breakpoint()
-                URL = "https://api.github.com/?access_token=[OAUTH-TOKEN]/orgs/[YOURORGNAMEHERE]/memberships/" + row[0]
-                r = requests.put(url=URL)
-                print (r.json())
+                print (row)
+                call('curl -u "username":"password" https://api.github.com/orgs/YOURORGNAMEHERE/memberships/'+row[0], shell=True)
 
         return users
         
 if __name__ == "__main__":
     githubAdd()
-
-
 
