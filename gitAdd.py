@@ -1,9 +1,14 @@
 import csv
 import pandas as pd
+import os
+from subprocess import call
 
 class githubAdd:
 
     def __init__(self):
+        # test unix system call
+        call('ls', shell=True)
+        # get user and team list
         self.users, self.teams = self.readGithubUsersCSV('githubUserList.csv');
 
     def readGithubUsersCSV(self, inputFile):
